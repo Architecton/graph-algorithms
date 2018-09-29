@@ -1,3 +1,5 @@
+import sys
+
 # Node: class representing a node in an undirected graph.
 class Node:
 	def __init__(self, val, adjacent_nodes):
@@ -32,9 +34,14 @@ def is_int(value):
 def construct_graph():
 	while True:
 		try:
+			# Parse graph description from standard input.
+			in_lines = sys.stdin.readlines()
+			# Remove newline characters from input.
+			in_lines = filter(lambda x: x != '', map(lambda x: x.replace('\n', ''), in_lines))
+
 			# Parse number of nodes and edges.
-			num_nodes = abs(int(input()))
-			num_edges = abs(int(input()))
+			num_nodes = abs(int(next(in_lines)))
+			num_edges = abs(int(next(in_lines)))
 
 			# Define an empty list for storing nodes.
 			nodes = []
@@ -42,7 +49,7 @@ def construct_graph():
 			# Parse nodes.
 			for i in range(num_nodes):
 				# Parse next node value.
-				val = input()
+				val = next(in_lines)
 
 				# Check if parsed input can be converted to float type.
 				if is_float(val):
@@ -58,8 +65,8 @@ def construct_graph():
 			# Parse edges.
 			for i in range(num_edges):
 				# Parse Nodes connected by edge.
-				node_A = int(input())
-				node_B = int(input())
+				node_A = int(next(in_lines))
+				node_B = int(next(in_lines))
 
 				# Add pointers to adjacent node to nodes connected by the edge.
 				nodes[node_A].adjacent_nodes.append(nodes[node_B])
@@ -68,5 +75,5 @@ def construct_graph():
 			# Return the constructed graph
 			return Graph(nodes)
 
-		except (ValueError("Illegal number of nodes"), IndexError("Index out of bounds")) as error:
+		except (ValueError("Illegal number of nodes"), IndexError("Index out of bounds"), StopIteration) as error:
 			print("Invalid input. Please try again.")
