@@ -59,8 +59,17 @@ def construct_graph():
 				if is_int(val):
 					val = int(val)
 
+				# Create Node instance with specified value.
+				node = Node(val, [])
+
+				# Add index to node.
+				node.index = i
+
+				# Initialize node as unvisited
+				node.visited = False
+
 				# Add node to list of nodes.
-				nodes.append(Node(val, []))
+				nodes.append(node)
 
 			# Parse edges.
 			for i in range(num_edges):
@@ -77,3 +86,8 @@ def construct_graph():
 
 		except (ValueError("Illegal number of nodes"), IndexError("Index out of bounds"), StopIteration) as error:
 			print("Invalid input. Please try again.")
+
+# clear_visited: set attribute visited to False for all nodes in graph G.
+def clear_visited(G):
+	for node in G.nodes:
+		node.visited = False
