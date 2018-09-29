@@ -23,13 +23,16 @@ def IDS(v, to_find, trace):
 		return None
 
 	# Go over specified depths.
-	for i in range(1, 10):
+	for i in range(1, 1000):
 		if trace:
 			print("Searching with maximum depth equal to " + str(i) + ".")
 		res = limited_DFS(v, i)
-		simple_graph.clear_visited(G) 	# Clear visited markers.
 		if res != None: 				# If found node with sought value, return it.
 			return res
+		if all(map(lambda x: x.visited == True, G.nodes)): # If all nodes were visited in previous call to IDS function,
+			return None 								   # the graph does not contain node with sought value.
+		simple_graph.clear_visited(G) 	# Clear visited markers.
+
 	return None
 
 # Define a value we are looking for.
