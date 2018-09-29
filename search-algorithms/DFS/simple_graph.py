@@ -9,6 +9,22 @@ class Graph:
 	def __init__(self, nodes):
 		self.nodes = nodes
 
+# is_float, is_int: auxiliary functions that check if value parsed from user can be connverted to float or int type.
+def is_float(value):
+  try:
+    float(value)
+    return True
+  except ValueError:
+    return False
+
+def is_int(value):
+  try:
+    int(value)
+    return True
+  except ValueError:
+    return False
+#######################################
+
 # construct graph: construct a graph by first parsing the number of nodes and edges
 # and then parsing the values of nodes and then the edges. The nodes are indexed from
 # 0 to N - 1, where N is the number of nodes. Indexing is done when the values in nodes are
@@ -27,6 +43,15 @@ def construct_graph():
 			for i in range(num_nodes):
 				# Parse next node value.
 				val = input()
+
+				# Check if parsed input can be converted to float type.
+				if is_float(val):
+					val = float(val)
+
+				# Check if parsed input can be converted to int type.
+				if is_int(val):
+					val = int(val)
+
 				# Add node to list of nodes.
 				nodes.append(Node(val, []))
 
