@@ -67,7 +67,7 @@ def construct_graph():
 					val = int(val)
 
 				# Create Node instance with specified value.
-				node = Node(val, [])
+				node = Node(val)
 
 				# Add index to node.
 				node.index = i
@@ -89,7 +89,7 @@ def construct_graph():
 				weight = int(next(in_lines))
 
 				# Add pointers to adjacent node to nodes connected by the edge.
-				edges.append(Edge(node_1, node_2, weight))
+				edges.append(Edge(nodes[node_1], nodes[node_2], weight))
 
 			# Return the constructed graph
 			return Graph(nodes, edges)
