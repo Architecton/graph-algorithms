@@ -53,6 +53,7 @@ def kruskal(G, trace):
 			nodes = set_union(edge.node_1, edge.node_2, nodes) 	# The trees connected by the edge are now connected. Create union of vertices.
 	return MST 													# Return set of edges representing the minimum spanning tree
 
+## Simple test ###########################################################
 
 # Parse graph description from user/file
 G = simple_graph2.construct_graph()
@@ -64,3 +65,5 @@ MST = kruskal(G, trace = True)
 print("\nThe minimum tree is spanned by edges:")
 for e in MST:
 	print("{0} -> {1}".format(e.node_1.index, e.node_2.index))
+
+##########################################################################
