@@ -1,0 +1,18 @@
+Search Algorithms:
+	- Depth first search (recursive and iterative)
+	- Breadth first search
+	- Iterative deepening search
+	- A* search
+	- Best first search
+	- Uniform cost search
+	- Beam search
+
+Path Finding Algorithms:
+	- Dijkstra's algorithm
+	- Floyd-Warshall algorithm
+	- Kruskal's algorithm
+	- Prim's algorithm
+
+TODO:
+	- Bellman-Ford algorithm
+	- Floyd-Warshall algorithm
