@@ -1,11 +1,11 @@
 Search Algorithms:
-	- Depth first search (recursive and iterative)
-	- Breadth first search
-	- Iterative deepening search
-	- A* search
-	- Best first search
-	- Uniform cost search
-	- Beam search
+	- Depth first search (recursive and iterative)      -- learnt
+	- Breadth first search                              -- learnt
+	- Iterative deepening search                        -- learnt
+	- A* search                                         -- learnt
+	- Best first search                                 -- learnt
+	- Uniform cost search                               -- learnt
+	- Beam search                                       -- learnt
 
 Path Finding Algorithms:
 	- Dijkstra's algorithm
